@@ -8,7 +8,44 @@ img {
 tr:nth-child(even) {
   background-color: #f2f2f2;
 }
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+}
 
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -60px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.tooltip .tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
 .button {
   background-color: #4CAF50; /* Green */
   border: none;
@@ -88,7 +125,51 @@ a {
 .lovely:hover {
   background-color: yellow;
 }
+/*a:hover {
+  background-color: yellow;
+}*/
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  margin: auto;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.8); /* Black w/ opacity */
+}
 
+/* Modal Content */
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Full width */
+}
+
+/* The Close Button */
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+* {
+  box-sizing: border-box;
+}
 
 body {
   margin: auto;
@@ -210,7 +291,7 @@ article {
 <div id="mySidenav" class="sidenav">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
   <p>Hi, Daniel. Welcome to your homelab.</p>
-  <a href="/">Home</a>
+  <a href="https://textandmetal.github.io/">Home</a>
   <a class="dropdown-btn">Projects</a>
     <div class="dropdown-container">
   <a href="/burritothompsonjnr/" target="_blank">Blog</a>
@@ -289,21 +370,20 @@ article {
     </div>
   </div>
 -->
-  <a href="help-page.php">Help</a>
-  <a href="quick-info.php">Quick Info</a>
-  <a href="/price-check.php">Price Check</a>
 
-<p><?php include("site-email.php");?></p>
+
+<p>textandmetal@gmail.com</p>
 
 </div>
 
 <div id="main">
-  <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
+  <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; Notes</span>
 
 
+<p>This is just a little place to store a few notes.</p>
 
-	</div
-	
+
+</div>
 
 <script>
 function openNav() {
@@ -331,11 +411,10 @@ for (i = 0; i < dropdown.length; i++) {
     }
   });
 } 
-
 </script>
+   
 
-
-    <!-- Footer -->
+  <!-- Footer -->
 <br>
 <hr>
     <footer>
@@ -367,6 +446,5 @@ for (i = 0; i < dropdown.length; i++) {
                     </ul>-->
                     <p class="copyright text-muted">Copyright &copy; TextandMetal 2019</p>
     </footer>
-
-	    </body>
-	</html>
+</body>
+</html>
