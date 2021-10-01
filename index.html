@@ -8,44 +8,7 @@ img {
 tr:nth-child(even) {
   background-color: #f2f2f2;
 }
-.tooltip {
-  position: relative;
-  display: inline-block;
-  border-bottom: 1px dotted black;
-}
 
-.tooltip .tooltiptext {
-  visibility: hidden;
-  width: 120px;
-  background-color: #555;
-  color: #fff;
-  text-align: center;
-  border-radius: 6px;
-  padding: 5px 0;
-  position: absolute;
-  z-index: 1;
-  bottom: 125%;
-  left: 50%;
-  margin-left: -60px;
-  opacity: 0;
-  transition: opacity 0.3s;
-}
-
-.tooltip .tooltiptext::after {
-  content: "";
-  position: absolute;
-  top: 100%;
-  left: 50%;
-  margin-left: -5px;
-  border-width: 5px;
-  border-style: solid;
-  border-color: #555 transparent transparent transparent;
-}
-
-.tooltip:hover .tooltiptext {
-  visibility: visible;
-  opacity: 1;
-}
 .button {
   background-color: #4CAF50; /* Green */
   border: none;
@@ -125,51 +88,7 @@ a {
 .lovely:hover {
   background-color: yellow;
 }
-/*a:hover {
-  background-color: yellow;
-}*/
-/* The Modal (background) */
-.modal {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
-  padding-top: 100px; /* Location of the box */
-  left: 0;
-  top: 0;
-  margin: auto;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.8); /* Black w/ opacity */
-}
 
-/* Modal Content */
-.modal-content {
-  background-color: #fefefe;
-  margin: auto;
-  padding: 20px;
-  border: 1px solid #888;
-  width: 80%; /* Full width */
-}
-
-/* The Close Button */
-.close {
-  color: #aaaaaa;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-  color: #000;
-  text-decoration: none;
-  cursor: pointer;
-}
-* {
-  box-sizing: border-box;
-}
 
 body {
   margin: auto;
@@ -383,55 +302,8 @@ article {
 
 
 
-    <button class="myBtn_multi button button5">About</button>
-    <button class="myBtn_multi button button5">Help</button>
-
-    <!-- The Modal -->
-    <div class="modal modal_multi">
-
-        <!-- Modal content -->
-        <div class="modal-content">
-            <span class="close close_multi">×</span>
-		<h1><?php include("site-title.php"); ?></h1>
-		<p><?php include("site-tagline.php"); ?></p>
-		<p>Admin Email: <?php include("site-admin-email.php"); ?></p>
-        <h3>About this site</h3>
-		<p><?php include("site-about.php"); ?></p>
-        <h5>Goals</h5>
-            <p>Welcome to the help section</p>
-             <p>We wanted a few simple goals, be able to:</p>
-                  <ul>
-                        <li>Create records</li> 
-                        <li>Read records</li> 
-                        <li>Update records</li> 
-                        <li>Delete record</li> 
-                        <li>Search records</li> 
-                </ul> 
-        </div>
-
-    <!-- The Modal -->
-    <div  class="modal modal_multi">
-
-        <!-- Modal content -->
-        <div class="modal-content">
-            <span class="close close_multi">×</span>
-                <h1>Help!</h1>
-            <p>The website can be broken down into three main parts:</p>
-                  <ul>
-                        <li>The Database</li> 
-                        <li>Querys to the Database'</li> 
-                        <li>Style</li> 
-                </ul> 
-                <h3>The Database</h3>
-                    <p></p>
-                <h3>Querys to the Database</h3>
-                    <p>We are using a combination of PDO and MYSQLI querys to create, read, update, search and display.</p>
-                <h3>Style</h3>
-                    <p>We need to decide how the information is displayed to the user, largely this will come down to the goals of a website.
-                    </p>
-        </div>
-
-    </div>
+	</div
+	
 
 <script>
 function openNav() {
@@ -459,67 +331,8 @@ for (i = 0; i < dropdown.length; i++) {
     }
   });
 } 
+
 </script>
-   
-
-    <script>
-        // Get the modal
-
-        var modalparent = document.getElementsByClassName("modal_multi");
-
-        // Get the button that opens the modal
-
-        var modal_btn_multi = document.getElementsByClassName("myBtn_multi");
-
-        // Get the <span> element that closes the modal
-        var span_close_multi = document.getElementsByClassName("close_multi");
-
-        // When the user clicks the button, open the modal
-        function setDataIndex() {
-
-            for (i = 0; i < modal_btn_multi.length; i++)
-            {
-                modal_btn_multi[i].setAttribute('data-index', i);
-                modalparent[i].setAttribute('data-index', i);
-                span_close_multi[i].setAttribute('data-index', i);
-            }
-        }
-
-
-
-        for (i = 0; i < modal_btn_multi.length; i++)
-        {
-            modal_btn_multi[i].onclick = function() {
-                var ElementIndex = this.getAttribute('data-index');
-                modalparent[ElementIndex].style.display = "block";
-            };
-
-            // When the user clicks on <span> (x), close the modal
-            span_close_multi[i].onclick = function() {
-                var ElementIndex = this.getAttribute('data-index');
-                modalparent[ElementIndex].style.display = "none";
-            };
-
-        }
-
-        window.onload = function() {
-
-            setDataIndex();
-        };
-
-        window.onclick = function(event) {
-            if (event.target === modalparent[event.target.getAttribute('data-index')]) {
-                modalparent[event.target.getAttribute('data-index')].style.display = "none";
-            }
-
-            // OLD CODE
-            if (event.target === modal) {
-                modal.style.display = "none";
-            }
-        };
-
-
-	    </script>
 
 
     <!-- Footer -->
